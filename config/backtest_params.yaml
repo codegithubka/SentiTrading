@@ -1,0 +1,26 @@
+# Backtesting parameters
+general:
+  start_date: "2023-01-01"
+  end_date: "2023-12-31"
+  cash: 100000
+  commission: 0.001  # 0.1% per trade
+  slippage: 0.001    # 0.1% slippage
+  
+trading:
+  position_size: 0.1  # Portion of portfolio for each trade
+  max_positions: 10   # Maximum number of simultaneous positions
+  stop_loss: 0.05     # 5% stop loss
+  take_profit: 0.15   # 15% take profit
+  
+sentiment:
+  signal_threshold: 0.2   # Minimum sentiment score to generate signal
+  lookback_period: 24     # Hours
+  min_mentions: 3         # Minimum mentions required
+  decay_factor: 0.9       # Time decay for older sentiment
+  
+metrics:
+  - "sharpe_ratio"
+  - "max_drawdown"
+  - "win_rate"
+  - "profit_factor"
+  - "annualized_return"

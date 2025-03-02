@@ -1,0 +1,9 @@
+# Development requirements
+-r base.txt
+pytest>=6.2.0
+black>=21.12b0
+isort>=5.10.0
+flake8>=4.0.0
+sphinx>=4.0.0
+jupyter>=1.0.0
+ipython>=7.0.0

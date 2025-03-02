@@ -1,0 +1,37 @@
+# Data source configurations
+reddit:
+  client_id: lq8UsNxO4QflTU7XW-R2DA
+  client_secret: Od0cK09W3h8XJr959I9-9jO5KVDfZA
+  user_agent: "SentiTrade v0.1.0 (by /u/ka2753)"
+  subreddits:
+    - wallstreetbets
+    - investing
+    - stocks
+    - options
+  max_posts_per_subreddit: 100
+  post_sort: "hot"
+  comment_sort: "top"
+  comment_limit: 50
+
+twitter:
+  bearer_token: YOUR_BEARER_TOKEN
+  keywords:
+    - "#stocks"
+    - "#investing"
+    - "#trading"
+  accounts_to_track:
+    - "jimcramer"
+    - "elonmusk"
+    - "business"
+  tweets_per_request: 100
+
+stocktwits:
+  api_key: YOUR_API_KEY
+  symbols:
+    - "SPY"
+    - "AAPL"
+    - "MSFT"
+    - "AMZN"
+    - "GOOGL"
+  trending: true
+  limit: 50

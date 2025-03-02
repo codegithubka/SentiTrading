@@ -1,0 +1,18 @@
+# Model configurations
+sentiment_analysis:
+  method: "vader"  # Options: "vader", "textblob", "transformer"
+  sentiment_thresholds:
+    positive: 0.05
+    negative: -0.05
+  
+entity_recognition:
+  method: "regex"  # Options: "regex", "ner", "combined"
+  
+preprocessing:
+  remove_urls: true
+  remove_emojis: true
+  lowercase: true
+  remove_punctuation: true
+  lemmatize: true
+  min_token_length: 2
+  max_token_length: 30
