@@ -1,10 +1,10 @@
-# SentiTrade: Social Media Sentiment Analysis for Quantitative Trading
+# SentiTrade: Social Media Sentiment Analysis
 
-SentiTrade is a platform that uses social media sentiment analysis to generate trading signals for financial markets.
+SentiTrade uses social media sentiment analysis to generate trading signals for financial markets.
 
 ## Features
 - Collection of social media data from Reddit, Twitter, StockTwits
-- Advanced NLP for sentiment analysis
+- NLP for sentiment analysis
 - Entity recognition for stock tickers and companies
 - Signal generation for trading strategies
 - Backtesting framework
