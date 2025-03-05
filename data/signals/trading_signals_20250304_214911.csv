@@ -1,0 +1,3 @@
+ticker,mentions,avg_sentiment,sentiment_label,positive_mentions,negative_mentions,neutral_mentions,positive_percentage,negative_percentage,neutral_percentage,signal,signal_strength,sentiment_consistency,confidence,allocation_score,allocation_ratio,position_size,current_price
+AAPL,5,0.5,positive,4,1,0,80.0,20.0,0.0,BUY,0.5,0.8,0.8599999999999999,0.42999999999999994,1.0,100000.0,235.93
+TSLA,3,-0.3333333333333333,negative,1,2,0,33.33333333333333,66.66666666666666,0.0,SELL,0.3333333333333333,0.6666666666666665,0.6466666666666665,,,,272.04

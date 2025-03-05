@@ -270,8 +270,9 @@ class SignalGenerator:
         else:
             return 'HOLD'
     
+    
     def apply_volume_filter(self, signals_df: pd.DataFrame,
-                          volume_data: Dict[str, float]) -> pd.DataFrame:
+                      volume_data: Dict[str, float]) -> pd.DataFrame:
         """
         Filter signals based on trading volume.
         
@@ -290,18 +291,36 @@ class SignalGenerator:
         filtered_df['volume'] = filtered_df['ticker'].map(volume_data)
         
         # Filter out low volume
-        median_volume = np.median(list(volume_data.values()))
-        filtered_df['sufficient_volume'] = filtered_df['volume'] >= median_volume * 0.5
-        
-        # Adjust confidence based on volume
-        if 'confidence' in filtered_df.columns and 'volume' in filtered_df.columns:
-            max_volume = filtered_df['volume'].max()
-            if max_volume > 0:
-                volume_factor = filtered_df['volume'] / max_volume
-                # Adjust confidence (70% original confidence, 30% volume factor)
-                filtered_df['confidence'] = 0.7 * filtered_df['confidence'] + 0.3 * volume_factor
-        
-        logger.info(f"Applied volume filtering to {len(filtered_df)} signals")
+        try:
+            median_volume = np.median(list(volume_data.values()))
+            threshold = median_volume * 0.5
+            
+            # Use .apply() to handle the comparison properly
+            filtered_df['sufficient_volume'] = filtered_df['volume'].apply(
+                lambda x: True if pd.isna(x) else (x >= threshold)
+            )
+            
+            # Adjust confidence based on volume
+            if 'confidence' in filtered_df.columns:
+                # Get max volume, handling NaN values
+                valid_volumes = filtered_df['volume'].dropna()
+                if not valid_volumes.empty:
+                    max_volume = valid_volumes.max()
+                    if max_volume > 0:
+                        # Calculate volume factor safely
+                        filtered_df['volume_factor'] = filtered_df['volume'].apply(
+                            lambda x: 0 if pd.isna(x) else (x / max_volume)
+                        )
+                        # Adjust confidence (70% original confidence, 30% volume factor)
+                        filtered_df['confidence'] = filtered_df.apply(
+                            lambda row: 0.7 * row['confidence'] + 0.3 * row.get('volume_factor', 0),
+                            axis=1
+                        )
+            
+            logger.info(f"Applied volume filtering to {len(filtered_df)} signals")
+        except Exception as e:
+            logger.warning(f"Error applying volume filter: {str(e)}")
+            logger.warning("Skipping volume filtering")
         
         return filtered_df
     

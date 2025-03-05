@@ -1,0 +1,44 @@
+{
+    "timestamp": "2025-03-04 21:47:23",
+    "total_signals": 5,
+    "buy_signals": 3,
+    "sell_signals": 1,
+    "hold_signals": 1,
+    "strong_buy_signals": 0,
+    "strong_sell_signals": 0,
+    "top_buy_signals": [
+        {
+            "ticker": "AAPL",
+            "signal": "BUY",
+            "confidence": 0.69,
+            "sentiment": 0.42,
+            "price": 235.93,
+            "suggested_position": 45119.8056952467
+        },
+        {
+            "ticker": "MSFT",
+            "signal": "BUY",
+            "confidence": 0.6849999999999999,
+            "sentiment": 0.31,
+            "price": 388.61,
+            "suggested_position": 33061.389714926285
+        },
+        {
+            "ticker": "AMZN",
+            "signal": "BUY",
+            "confidence": 0.6369999999999999,
+            "sentiment": 0.22,
+            "price": 203.8,
+            "suggested_position": 21818.80458982703
+        }
+    ],
+    "top_sell_signals": [
+        {
+            "ticker": "TSLA",
+            "signal": "SELL",
+            "confidence": 0.72,
+            "sentiment": -0.25,
+            "price": 272.04
+        }
+    ]
+}

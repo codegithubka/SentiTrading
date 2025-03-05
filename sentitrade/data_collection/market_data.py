@@ -81,7 +81,8 @@ class MarketDataProvider:
                 if (interval == "1d" and cache_age < 86400) or \
                    (interval == "1h" and cache_age < 3600):
                     logger.info(f"Loading cached data for {ticker} from {cache_file}")
-                    return pd.read_csv(cache_file, index_col=0, parse_dates=True)
+                    # Add an explicit date format when reading the CSV
+                    return pd.read_csv(cache_file, index_col=0, parse_dates=True, date_format='%Y-%m-%d')
         
         # Fetch data using yfinance
         try:

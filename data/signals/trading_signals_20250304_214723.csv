@@ -1,0 +1,6 @@
+ticker,mentions,avg_sentiment,sentiment_label,positive_mentions,negative_mentions,neutral_mentions,positive_percentage,negative_percentage,neutral_percentage,signal,signal_strength,sentiment_consistency,confidence,allocation_score,allocation_ratio,position_size,current_price
+AAPL,10,0.42,positive,7,2,1,70,20.0,10.0,BUY,0.42,0.7,0.69,0.28979999999999995,0.451198056952467,45119.8056952467,235.93
+TSLA,15,-0.25,negative,3,9,3,20,60.0,20.0,SELL,0.25,0.6,0.72,,,,272.04
+MSFT,8,0.31,positive,6,1,1,75,12.5,12.5,BUY,0.31,0.75,0.6849999999999999,0.21234999999999998,0.33061389714926287,33061.389714926285,388.61
+AMZN,7,0.22,positive,5,1,1,71,14.0,15.0,BUY,0.22,0.71,0.6369999999999999,0.14014,0.2181880458982703,21818.80458982703,203.8
+GOOGL,5,0.15,positive,3,1,1,60,20.0,20.0,HOLD,0.15,0.6,0.52,,,,170.92
